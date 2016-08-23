@@ -1,0 +1,217 @@
+<!--
+Created by huqiwen on 16/8/15. 简历预览
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>简历预览</title>
+</head>
+<body style="background: #f3f1ee">
+<div id="preview">
+    <header class="preview_header">
+        <div>
+            <p>加入职场测试</p>
+            <p><img :src="person.Set1?'common/images/on.png':'common/images/off.png'" @click="set('1')" ></p>
+        </div>
+        <div>
+            <p>加入素质教育报告单</p>
+            <p><img :src="person.Set2?'common/images/on.png':'common/images/off.png'" @click="set('2')" ></p>
+        </div>
+    </header>
+
+    <div class="person">
+        <div>
+            <img :src="person.Img" >
+        </div>
+        <div>
+            <p  :class="person.Sex" >{{person.Name}}</p>
+            <!--<p class="male" v-if="person.Sex">{{person.Name}}</p>-->
+            <p>{{person.School}}</p>
+        </div>
+        <div>
+           <img :src="person.Code">
+        </div>
+    </div>
+
+    <div class="test" v-if="person.Set1">
+        <header>职场测试</header>
+        <ul class="clearfix">
+            <li>
+                <p><img src="common/images/test1.png"></p>
+                <p>动机</p>
+                <p>{{person.Test1}}</p>
+            </li>
+            <li>
+                <p><img src="common/images/test2.png"></p>
+                <p>价值观</p>
+                <p>{{person.Test2}}</p>
+            </li>
+            <li>
+                <p><img src="common/images/test3.png"></p>
+                <p>IQ</p>
+                <p>{{person.Test3}}</p>
+            </li>
+            <li>
+                <p><img src="common/images/test4.png"></p>
+                <p>EQ</p>
+                <p>{{person.Test4}}</p>
+            </li>
+            <li>
+                <p><img src="common/images/test5.png"></p>
+                <p>思维模式</p>
+                <p>{{person.Test5}}</p>
+            </li>
+            <li>
+                <p><img src="common/images/test6.png"></p>
+                <p>行为模式</p>
+                <p>{{person.Test6}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="presentation"  v-if="person.Set2">
+        <header>素质教育报告单</header>
+        <div class="H_presentation">
+            <div>
+                <p>总学分</p>
+
+                <p>{{person.Point1}}</p>
+            </div>
+            <div>
+                <p>总积分</p>
+
+                <p>{{person.Point2}}</p>
+            </div>
+            <div>
+                <p>总活动数</p>
+
+                <p>{{person.Point3}}</p>
+            </div>
+        </div>
+        <div class="honor">
+            <p>获奖情况</p>
+            <ul class="honor_List">
+                <li v-for="Honor in person.Honor">{{Honor.Name}}</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="H_extramural_Line clearfix">
+        <div id="H_ECharts_Line"></div>
+    </div>
+
+    <div class="H_extramural_Line clearfix">
+        <div id="H_ECharts"></div>
+    </div>
+    <div class="PersonInfo">
+        <header>基本信息</header>
+        <ul>
+            <li>
+                <p>生日</p>
+                <p>{{personInfo.Birth}}</p>
+            </li>
+            <li>
+                <p>专业</p>
+                <p>{{personInfo.Major}}</p>
+            </li>
+            <li>
+                <p>感情状态</p>
+                <p>{{personInfo.Love}}</p>
+            </li>
+            <li>
+                <p>手机号码</p>
+                <p>{{personInfo.Phone}}</p>
+            </li>
+            <li>
+                <p>邮箱地址</p>
+                <p>{{personInfo.Mail}}</p>
+            </li>
+            <li>
+                <p>现居城市</p>
+                <p>{{personInfo.City}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="PersonInfo">
+        <header>求职意向</header>
+        <ul>
+            <li>
+                <p>工作性质</p>
+                <p>{{jobFor.WorkType}}</p>
+            </li>
+            <li>
+                <p>工作地点</p>
+                <p>{{jobFor.JobPlace}}</p>
+            </li>
+            <li>
+                <p>期望薪资</p>
+                <p>{{jobFor.Money}}/月</p>
+            </li>
+            <li>
+                <p>职业类别</p>
+                <p>{{jobFor.JobType}}</p>
+            </li>
+            <li>
+                <p>行业类别</p>
+                <p>{{jobFor.Industry}}</p>
+            </li>
+            <li>
+                <p>工作状态</p>
+                <p>{{jobFor.Status}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="PersonInfo">
+        <header>教育背景</header>
+        <ul>
+            <li>
+                <p>学校名称</p>
+                <p>{{Education.School}}</p>
+            </li>
+            <li>
+                <p>专业名称</p>
+                <p>{{Education.Major}}</p>
+            </li>
+            <li>
+                <p>学历/学位</p>
+                <p>{{Education.Degree}}</p>
+            </li>
+            <li>
+                <p>是否统招</p>
+                <p>{{Education.IsT?"是":"否"}}</p>
+            </li>
+            <li>
+                <p>入学时间</p>
+                <p>{{Education.InSchool}}</p>
+            </li>
+            <li>
+                <p>毕业时间</p>
+                <p>{{Education.OutSchool}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="Info">
+        <header>自我评价</header>
+        <div>
+            {{person.Mine}}
+        </div>
+    </div>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script src="bower_components/echarts/dist/echarts.min.js"></script>
+<script src="common/js/public.js"></script>
+<script src="common/js/echarts.js"></script>
+<script src="common/js/preview.js"></script>
+</html>

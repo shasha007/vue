@@ -1,0 +1,59 @@
+<!--
+Created by huqiwen on 16/8/15. 选择所在城市
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/style.css" rel="stylesheet">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <title>所在城市</title>
+</head>
+<body>
+<div id="city">
+    <header class="location">
+        <p>{{location}}</p>
+        <p><img @click="GetLocation" src="common/images/location.png"></p>
+    </header>
+    <div class="flag" v-if="PFlag.isShow" transition="close">
+        <span v-if="PFlag.isShow" @click="reset(1)" transition="expand">{{PFlag.name}} <i></i></span>
+        <span v-if="CFlag.isShow" @click="reset(2)" transition="expand">{{CFlag.name}} <i></i></span>
+        <span v-if="QFlag.isShow" @click="reset(3)" transition="expand">{{QFlag.name}} <i></i></span>
+    </div>
+    <div class="title">
+        全部
+    </div>
+    <ul  v-if="showP">
+        <li v-for="province in province" data-proid="{{province.ProID}}" @click="getCity(province.ProID,province.name)">
+            <p>{{province.name}}</p>
+            <p><img src="common/images/back_right.png"></p>
+        </li>
+    </ul>
+    <ul class="city" v-if="showC">
+        <li v-for="city in city" data-cityid="{{city.CityID}}" @click="getQu(city.CityID,city.name)">
+            <p>{{city.name}}</p>
+            <p><img src="common/images/back_right.png"></p>
+        </li>
+    </ul>
+    <ul class="area" v-if="showQ">
+        <li v-for="area in area" data-cityid="{{area.Id}}" @click="ChooseQu(area.Id,area.DisName)">
+            <p>{{area.DisName}}</p>
+            <p><img src="common/images/back_right.png"></p>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=wVD2rbMsCWZpQpCcvG44KVKp&v=1.0"></script>
+<script src="common/js/getCity.js"></script>
+<script src="common/js/public.js"></script>
+<script src="common/js/city.js"></script>
+</html>

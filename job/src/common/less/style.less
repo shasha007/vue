@@ -1,0 +1,993 @@
+@base : #ea5504; //默认颜色
+@borderColor1 : #f2f2f2; //浅边框
+@borderColor2 : #dcdcdc; //深边框
+@base8 : #888;
+@base9 : #999;
+@font3 : #333; //默认字体颜色
+//我的投递记录
+@m1 : #ea5b5b; //最推荐
+@m2 : #4cbda1; //较合适
+@m3 : #f69d08; //有机会
+@m4 : #666; //没缘分
+
+//我的
+#person {
+  > nav {
+    display: flex;
+    height: 3.6rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top: 1px solid @borderColor1;
+    border-bottom: 1px solid @borderColor1;
+    align-items: center;
+    justify-content: center;
+    > div:nth-child(1) {
+      border-right: 1px solid @borderColor1;
+    }
+    > div {
+      flex: 1;
+      height: 2rem;
+    }
+  }
+  a {
+    display: block;
+    width: 60%;
+    height: 2.8rem;
+    margin: 0 auto;
+    color: #888;
+  }
+  .on {
+    color: @base;
+    border-bottom: 2px solid @base;
+  }
+}
+
+.H_myRecord {
+  margin-bottom: -1px;
+  > li {
+    display: flex;
+    height: 6.4rem;
+    padding: .5rem 10px;
+    > div:nth-child(1) {
+      flex: .8;
+      height: 6.4rem;
+      margin-right: .4rem;
+      margin-top: .2rem;
+      img {
+        height: 90%;
+        max-height: 90%;
+        margin-top: 5%;
+        border-radius: 100%;
+        vertical-align: middle;
+      }
+    }
+    > div:nth-child(2) {
+      flex: 1.8;
+      margin-bottom: -.5rem;
+      border-bottom: 1px solid @borderColor1;
+    }
+    > div:nth-child(3) {
+      flex: 1;
+      margin-bottom: -.5rem;
+      text-align: right;
+      border-bottom: 1px solid @borderColor1;
+    }
+  }
+  .jobName, .Money, .From, .Require {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .jobName {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
+  .Money {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    font-size: 1.1rem;
+  }
+  .From, .Require {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    color: @base8;
+  }
+  .Time, .Percent {
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #888;
+  }
+  .Match {
+    height: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  .Go {
+    height: 2rem;
+    margin-top: 1.2rem;
+  }
+  .arrow:before, .arrow::after {
+    background: #ddd;
+  }
+  .m1 {
+    color: @m1;
+  }
+  .m1:after {
+    content: '最推荐';
+  }
+  .m2 {
+    color: @m2;
+  }
+  .m2:after {
+    content: '较合适';
+  }
+  .m3 {
+    color: @m3;
+  }
+  .m3:after {
+    content: '有机会';
+  }
+  .m4 {
+    color: @m4;
+  }
+  .m4:after {
+    content: '没缘分';
+  }
+}
+
+.H_myCollect {
+  margin-bottom: -1px;
+  > li {
+    display: flex;
+    height: 6.4rem;
+    padding: .5rem 10px;
+    border-bottom: 1px solid @borderColor1;
+    > div:nth-child(1) {
+      flex: 1.5;
+      .jobName, .Money, .From, .Require {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .jobName {
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.4rem;
+        > span {
+          margin-left: 10px;
+          padding: 4px;
+          font-size: 1rem;
+          background: #7ed2b5;
+          color: #fff;
+          border-radius: 10px;
+        }
+      }
+      .Money {
+        height: 1.6rem;
+        line-height: 1.6rem;
+        font-size: 1.2rem;
+      }
+      .From, .Require {
+        height: 1.4rem;
+        line-height: 1.4rem;
+        font-size: 1.0rem;
+        color: @base8;
+      }
+    }
+    > div:nth-child(2) {
+      flex: 1;
+      > button {
+        display: inline-block;
+        width: 46%;
+        height: 2.4rem;
+        margin-top: 2rem;
+        border-radius: 2rem;
+      }
+      > .deliver {
+        margin-right: 4%;
+        color: #3ea1e5;
+        background: #fff;
+        border: 1px solid #3ea1e5;
+      }
+      > .delete {
+        color: #fff;
+        background: #ea5b5b;
+        border: 1px solid #ea5b5b;
+      }
+    }
+  }
+}
+
+//基本信息
+#personInfo {
+  > .personInfo_header, > .personInfo_footer {
+    ul {
+      background: #fff;
+      border-top: 1px solid @borderColor1;
+      font-size: 1.2rem;
+      li {
+        display: flex;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        border-bottom: 1px solid @borderColor1;
+        > p {
+          padding: 0 5px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          align-items: center;
+          justify-content: center;
+        }
+        > p:nth-child(1) {
+          flex: 2;
+          > img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+        }
+        > p:nth-child(2) {
+          flex: 1;
+          color: #ccc;
+          text-align: right;
+          > span {
+            float: right;
+            width: 20px;
+            margin-top: 12px;
+            vertical-align: middle;
+          }
+          > .arrow:before {
+            left: inherit !important;
+            right: 0 !important;
+            background: #ccc !important;
+          }
+          > .arrow:after {
+            right: 0 !important;
+            background: #ccc !important;
+          }
+        }
+      }
+    }
+  }
+
+  .personInfo_footer {
+    margin-top: 20px;
+  }
+}
+
+//首页
+#index {
+  font-size: 1.1rem;
+  > header {
+    padding: 10px;
+    background: #f3f1ee;
+    > div {
+      display: flex;
+      height: 40px;
+      background: #fff;
+      border-radius: 5px;
+      > .h_index_input {
+        flex: 4;
+        margin-right: 10px;
+        overflow: hidden;
+        > input {
+          width: 100%;
+          height: 30px;
+          margin-top: 5px;
+          padding-left: 40px;
+          line-height: 30px;
+          color: #888;
+          border: none;
+          background: url("../images/search.png") no-repeat 10px 50%;
+          background-size: 20px 20px;
+        }
+        > input::-webkit-input-placeholder {
+          font-size: 1.1rem;
+        }
+        > input:-moz-placeholder {
+          font-size: 1.1rem;
+        }
+        > input::-moz-placeholder {
+          font-size: 1.1rem;
+        }
+        > input:-ms-input-placeholder {
+          font-size: 1.1rem;
+        }
+      }
+      > .h_index_clear {
+        > span {
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          margin-top: 11px;
+          background: url("../images/search_clear.png") no-repeat 0 0;
+          background-size: 18px 18px;
+        }
+      }
+      > .h_index_btn {
+        flex: 1;
+        text-align: center;
+        button {
+          height: 30px;
+          margin-top: 5px;
+          color: @base;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+  }
+  .Match {
+    height: 3.4rem;
+    //font-size: 1.1rem;
+    line-height: 5rem;
+  }
+}
+
+.index_loading_flag {
+  background: #fff;
+}
+
+//搜索记录
+.H_Index_record {
+  > header {
+    height: 40px;
+    padding: 0 15px;
+    line-height: 40px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid @borderColor1;
+  }
+  li {
+    display: flex;
+    margin: 0 15px;
+    border-bottom: 1px solid @borderColor1;
+    font-size: 1rem;
+    color: @base8;
+    > p {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      > img {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+    > p:nth-child(2) {
+      flex: 2;
+    }
+  }
+  > footer {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: @base;
+  }
+}
+
+.Empty {
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+//自我评价
+#evaluate {
+  text-align: center;
+  > textarea {
+    width: 91%;
+    height: 25rem;
+    padding: 4%;
+    color: @base8;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    border: none;
+    resize: none;
+  }
+  ::-webkit-input-placeholder {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    white-space: normal
+  }
+  :-moz-placeholder {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    white-space: nowrap;
+  }
+  ::-moz-placeholder {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    white-space: nowrap;
+  }
+  :-ms-input-placeholder {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    white-space: nowrap;
+  }
+  > button {
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.4rem;
+    text-align: center;
+    background: @base;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+  }
+
+}
+
+//第二课堂
+#Extra {
+  > .H_Extra_Header {
+    display: flex;
+    height: 6rem;
+    margin-top: 10px;
+    padding: 0 15px;
+    background: #fff;
+    > div {
+      flex: 1;
+      text-align: center;
+      > p:nth-child(1) {
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 1.2rem;
+        color: @base8;
+      }
+      > p:nth-child(2) {
+        height: 3rem;
+        line-height: 1rem;
+        font-size: 1.6rem;
+        color: #1f1f1f;
+      }
+    }
+  }
+  .H_extramural_Line {
+    margin-top: 20px;
+    background: #fff;
+    > #H_ECharts_Line {
+      width: 100%;
+      height: 250px;
+    }
+    > #H_ECharts {
+      width: 100%;
+      height: 250px;
+    }
+  }
+  .H_Extra_Footer {
+    margin-top: 20px;
+    background: #fff;
+    > header {
+      height: 40px;
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 40px;
+      border-bottom: 1px solid @borderColor2;
+    }
+    li {
+      //height: 60px;
+      font-size: 1.2rem;
+      > header {
+        display: flex;
+        height: 2rem;
+        padding: 5px 15px 0;
+        line-height: 2rem;
+        > p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .name {
+          flex: 1;
+          margin-right: 15px;
+        }
+        .date {
+          color: @base9;
+          text-align: right;
+        }
+      }
+      > div {
+        padding: 0 15px 0 0;
+        margin-left: 15px;
+        border-bottom: 1px solid @borderColor2;
+        > p {
+          height: 1.6rem;
+          color: @base9;
+          line-height: 1.6rem;
+          font-size: 1rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+//简历
+#vitae {
+  > header {
+    display: flex;
+    height: 8rem;
+    padding: 0 15px;
+    background: #fff;
+    border-top: 1px solid @borderColor2;
+    align-items: center;
+    justify-content: center;
+    > div {
+      height: 6rem;
+    }
+    > div:nth-child(1) {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 5px;
+      > img {
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+    > div:nth-child(2) {
+      flex: 3;
+      > p {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      > p:nth-child(1) {
+        height: 3rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
+      }
+      > p:nth-child(2), > p:nth-child(3) {
+        height: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        color: @base8;
+      }
+      span {
+        color: @base;
+      }
+      .female:after {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 10px;
+        background: url("../images/female.png") no-repeat 0 .1rem;
+        background-size: 1.5rem 1.5rem;
+      }
+      .male:after {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 10px;
+        background: url("../images/male.png") no-repeat 0 .1rem;
+        background-size: 1.5rem 1.5rem;
+      }
+    }
+    > div:nth-child(3) {
+      flex: 1;
+      margin-left: 10px;
+      line-height: 6rem;
+      > button {
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        color: #fff;
+        background: @base;
+        line-height: 30px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  > .test1, > .test2, > .test3, > .test4, > .test5 {
+    display: flex;
+    height: 50px;
+    margin-top: 20px;
+    line-height: 50px;
+    font-size: 1.1rem;
+    background: url("../images/mine.png") #fff no-repeat 15px 15px;
+    background-size: 20px 20px;
+    > p:nth-child(1) {
+      flex: 3;
+      padding-left: 45px;
+    }
+    > p:nth-child(2) {
+      flex: 1;
+      padding-right: 15px;
+      text-align: right;
+      color: @base8;
+      > span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        float: right;
+        margin-top: 15px;
+        background: url("../images/back_right.png") no-repeat;
+        background-size: 20px 20px;
+      }
+    }
+  }
+  .test4 {
+    margin-top: 0;
+    border-top: 1px solid @borderColor1;
+  }
+}
+
+//!!简历预览
+#preview {
+  font-size: 1.1rem;
+  //头部设置
+  .preview_header {
+    background: #fff;
+    > div {
+      display: flex;
+      height: 50px;
+      padding: 0 15px;
+      line-height: 50px;
+      border-bottom: 1px solid @borderColor1;
+      > p:nth-child(1) {
+        flex: 2;
+      }
+      > p:nth-child(2) {
+        flex: 1;
+        text-align: right;
+        > img {
+          height: 30px;
+          vertical-align: middle;
+        }
+      }
+
+    }
+
+  }
+  //个人
+  > .person {
+    display: flex;
+    height: 8rem;
+    padding: 0 15px;
+    margin-top: 20px;
+    background: #fff;
+    //border-top: 1px solid @borderColor2;
+    align-items: center;
+    justify-content: center;
+    > div {
+      height: 6rem;
+    }
+    > div:nth-child(1) {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 5px;
+      > img {
+        width: 100%;
+        border-radius: 100%;
+      }
+    }
+    > div:nth-child(2) {
+      flex: 3;
+      > p {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      > p:nth-child(1) {
+        height: 3rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
+      }
+      > p:nth-child(2), > p:nth-child(3) {
+        height: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        color: @base8;
+      }
+      span {
+        color: @base;
+      }
+      .female:after {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 10px;
+        background: url("../images/female.png") no-repeat 0 .1rem;
+        background-size: 1.5rem 1.5rem;
+      }
+      .male:after {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 10px;
+        background: url("../images/male.png") no-repeat 0 .1rem;
+        background-size: 1.5rem 1.5rem;
+      }
+    }
+    > div:nth-child(3) {
+      flex: 1;
+      margin-left: 10px;
+      line-height: 6rem;
+      > img {
+        height: 5rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  //职场测试
+  > .test {
+    margin-top: 20px;
+    background: #fff;
+    > header {
+      height: 40px;
+      padding: 0 15px;
+      line-height: 40px;
+      border: 1px solid @borderColor1;
+    }
+    li {
+      display: flex;
+      width: 49%;
+      height: 50px;
+      line-height: 50px;
+      float: left;
+      border-bottom: 1px solid @borderColor1;
+      > p:nth-child(1) {
+        flex: 1;
+        padding-left: 5px;
+        > img {
+          height: 35px;
+          vertical-align: middle;
+        }
+      }
+      > p:nth-child(2) {
+        flex: 3;
+        padding-left: 5px;
+        color: @base8;
+      }
+      > p:nth-child(3) {
+        flex: 1;
+        padding-right: 5px;
+        color: @base;
+        text-align: right;
+      }
+    }
+    li:nth-child(2n-1) {
+      padding-right: 1%;
+      border-right: 1px solid @borderColor1;
+    }
+  }
+  //报告单
+  > .presentation {
+    margin-top: 20px;
+    background: #fff;
+    >header{
+      height: 40px;
+      padding: 0 15px;
+      line-height: 40px;
+    }
+    > .H_presentation {
+      display: flex;
+      height: 5rem;
+      margin-top: 10px;
+      padding: 0 15px;
+      border-bottom: 1px solid @borderColor1;
+      > div {
+        flex: 1;
+        text-align: center;
+        > p:nth-child(1) {
+          height: 3rem;
+          line-height: 3rem;
+          font-size: 1.2rem;
+          color: @base8;
+        }
+        > p:nth-child(2) {
+          height: 3rem;
+          line-height: 1rem;
+          font-size: 1.6rem;
+          color: #1f1f1f;
+        }
+      }
+    }
+    >.honor{
+      >p:nth-child(1){
+        height: 40px;
+        padding: 0 15px;
+        line-height: 40px;
+        font-size: 1.1rem;
+        color: @base8;
+      }
+      >.honor_List{
+        padding: 0 15px;
+        font-size: 1.2rem;
+        border-top: 1px solid @borderColor1;
+        >li{
+          height: 4.5rem;
+          line-height: 4.5rem;
+          border-bottom: 1px solid @borderColor1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  #H_ECharts_Line,#H_ECharts{
+    width: 100%;
+    height: 25rem
+  }
+  .H_extramural_Line{
+   margin-top: 20px;
+    background: #fff;
+  }
+  >.PersonInfo{
+    margin-top: 20px;
+    background: #fff;
+    >header{
+      height: 50px;
+      padding-left: 15px;
+      font-size: 1.3rem;
+      line-height: 50px;
+    }
+    li{
+      display: flex;
+      height: 40px;
+      padding: 0 15px;
+      line-height: 40px;
+      >p{
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      >p:nth-child(1){
+        color: @base8;
+      }
+      >p:nth-child(2){
+        text-align: right;
+      }
+    }
+  }
+
+  >.Info{
+    margin-top: 20px;
+    background: #fff;
+    >header{
+      height: 50px;
+      padding-left: 15px;
+      font-size: 1.3rem;
+      line-height: 50px;
+    }
+    >div{
+      padding: 0 15px;
+      line-height: 150%;
+      color: @base8;
+    }
+  }
+}
+
+
+//选择城市
+#city {
+  > .location {
+    display: flex;
+    height: 5rem;
+    padding: 0 15px;
+    line-height: 5rem;
+    > p:nth-child(1) {
+      flex: 5;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    > p:nth-child(2) {
+      flex: 1;
+      text-align: right;
+      > img {
+        height: 2rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  > .title {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 15px;
+    background: #efefef;
+  }
+  li {
+    display: flex;
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 15px;
+    border-bottom: 1px solid @borderColor1;
+    > p:nth-child(1) {
+      flex: 3;
+      font-size: 1.1rem;
+    }
+    > p:nth-child(2) {
+      flex: 1;
+      text-align: right;
+      > img {
+        height: 1.5rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  .flag{
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0 15px;
+    >span{
+      display: inline-block;
+      padding: 5px 18px 5px 10px;
+      //height: 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid @base;
+      text-align: center;
+      color:@base;
+      background: url(../images/close1.png) no-repeat 95% 50%;
+      background-size: 13px 13px;
+    }
+  }
+}
+/* 动画 */
+//搜索
+/* 必需 */
+.expand-transition {
+  transition: all .8s ease;
+  height: auto;
+  overflow: hidden;
+}
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  height: 0;
+  opacity: 0;
+}
+//切换列表
+.tablist-transition {
+  transition: all .5s ease;
+  height: auto;
+  margin-bottom: -1px;
+  overflow: hidden;
+}
+
+.tablist-enter, .tablist-leave {
+  height: 0;
+  opacity: 0;
+}
+
+//关闭类
+.close-transition {
+  transition: all .2s ease;
+  height: auto;
+  overflow: hidden;
+}
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.close-enter, .close-leave {
+  height: 0;
+  opacity: 0;
+}
+

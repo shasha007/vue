@@ -1,0 +1,31 @@
+<!--
+Created by huqiwen on 16/8/11.
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>自己评价</title>
+</head>
+<body>
+<div id="evaluate">
+  <textarea v-model="evaluateValue" placeholder="简明扼要的描述您的职业优势,让用人单位快速的了解您!优秀的自我评价可以吸引招聘人员的眼球为您的简历增色不少!...">
+</textarea>
+    <button @click="submit">提交</button>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="common/js/public.js"></script>
+<script src="common/js/evaluate.js"></script>
+</html>

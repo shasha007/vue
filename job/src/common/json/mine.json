@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "Id" : "1",
+      "Name" : "农书书屋农家书屋1",
+      "Img" : "common/images/111.png",
+      "Sex" : 0,
+      "School" : "苏州大学",
+      "Complete" : "70%",
+      "test1" : "完整",
+      "test2" : "90%",
+      "test3" : "70%",
+      "test4" : "60%"
+    }
+  ]
+}

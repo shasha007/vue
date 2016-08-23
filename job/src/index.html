@@ -1,0 +1,108 @@
+<!--
+Created by huqiwen on 16/8/5.创就业
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>首页</title>
+</head>
+<body>
+<div id="index">
+    <header>
+        <div>
+            <p class="h_index_input">
+                <input id="searchInput" @focus="getFocus"   @keyup.enter="SearchEnter" placeholder="搜索职位" v-model="inputValue">
+            </p>
+            <p class="h_index_clear" @click="clear">
+                <span></span>
+            </p>
+            <p class="h_index_btn">
+                <button @click="SearchEnter">搜索</button>
+            </p>
+        </div>
+    </header>
+        <!--职位列表-->
+    <div class="index_loading_flag" v-if="!isSearch&&!Searched" transition="expand">
+        <ul class="H_myRecord" >
+            <li class="clearfix" v-for="index in index">
+                <div>
+                    <img :src="index.Img">
+                </div>
+                <div>
+                    <p class="jobName">{{index.Name}}</p>
+
+                    <p class="Money">{{index.MoneyBottom}}&emsp13;-&emsp13;{{index.MoneyTop}}</p>
+
+                    <p class="From">{{index.From}}</p>
+
+                    <p class="Require">{{index.Place}}&emsp13;/&emsp13;经验{{index.YearBottom}}到{{index.YearTop}}年&emsp13;/&emsp13;{{index.Academic}}</p>
+                </div>
+                <div>
+                    <!--<p class="Time"></p>-->
+                    <p v-if="index.is" class="Match m{{index.Match}}">
+                    </p>
+                    <p v-if="index.is" class="Percent">匹配度<span>{{index.Percent}}</span>%</p>
+                    <p v-else="index.is" class="Go arrow">
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--搜索记录-->
+    <div class="H_Index_record" v-if="isSearch&&!Searched" transition="expand">
+        <header>搜索记录</header>
+        <ul>
+            <li v-for="search in searchRecord" data-hsrId="{{search.Id}}" @click="SearchFromRecord(search.Id,search.Record,$index)">
+                <p><img src="common/images/SearchRecord.png"></p>
+                <p class="RecordName">{{search.Record}}</p>
+            </li>
+        </ul>
+        <footer @click="clearRecord" v-if="searchRecord.length!=0">清空搜索记录</footer>
+    </div>
+
+    <!--搜索结果-->
+    <ul class="H_myRecord" v-if="Searched&&!isEmpty" transition="expand">
+        <li class="clearfix" v-for="index in search">
+            <div>
+                <img :src="index.Img">
+            </div>
+            <div>
+                <p class="jobName">{{index.Name}}</p>
+
+                <p class="Money">{{index.MoneyBottom}}&emsp13;-&emsp13;{{index.MoneyTop}}</p>
+
+                <p class="From">{{index.From}}</p>
+
+                <p class="Require">{{index.Place}}&emsp13;/&emsp13;经验{{index.YearBottom}}到{{index.YearTop}}年&emsp13;/&emsp13;{{index.Academic}}</p>
+            </div>
+            <div>
+                <p v-if="index.is" class="Match m{{index.Match}}">
+                </p>
+                <p v-if="index.is" class="Percent">搜索匹配度<span>{{index.Percent}}</span>%</p>
+                <p v-else="index.is" class="Go arrow">
+                </p>
+            </div>
+        </li>
+    </ul>
+    <!--搜索为空-->
+    <div class="Empty" v-if="isEmpty" transition="expand">
+        <img src="common/images/none.png">
+    </div>
+    </div>
+
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="common/js/public.js"></script>
+<script src="common/js/index.js"></script>
+</html>

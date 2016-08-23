@@ -1,0 +1,70 @@
+<!--
+Created by huqiwen on 16/8/2. 第二课堂
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>第二课堂</title>
+</head>
+<body style="background: #f3f1ee">
+<div id="Extra">
+    <div class="H_Extra_Header">
+        <div>
+            <p>总学分</p>
+
+            <p>98.00</p>
+        </div>
+        <div>
+            <p>总积分</p>
+
+            <p>98.00</p>
+        </div>
+        <div>
+            <p>总活动数</p>
+
+            <p>98.00</p>
+        </div>
+    </div>
+    <div class="H_extramural_Line clearfix">
+        <div id="H_ECharts_Line"></div>
+    </div>
+    <div class="H_extramural_Line clearfix">
+        <div id="H_ECharts"></div>
+    </div>
+    <div class="H_Extra_Footer">
+        <header>
+            明细
+        </header>
+        <ul>
+            <li v-for="detail in detail">
+                <header>
+                    <p class="name">{{detail.Name}}</p>
+                    <p class="date">{{detail.Time}}</p>
+                </header>
+                <div>
+                    <p>分类&emsp13;:&emsp13;{{detail.Type}}</p>
+                    <p>学分&emsp13;:&emsp13;{{detail.Point}}</p>
+                    <p>积分&emsp13;:&emsp13;{{detail.Credit}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script src="bower_components/echarts/dist/echarts.min.js"></script>
+<script src="common/js/public.js"></script>
+<script src="common/js/echarts.js"></script>
+<script src="common/js/extra.js"></script>
+</html>

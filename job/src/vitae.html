@@ -1,0 +1,87 @@
+<!--
+Created by huqiwen on 16/8/11.
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>简历</title>
+</head>
+<body style="background: #f3f1ee">
+<div id="vitae">
+    <header>
+        <div>
+            <img src="common/images/111.png">
+        </div>
+        <div>
+            <p  :class="person.Sex" >{{person.Name}}</p>
+            <!--<p class="male" v-if="person.Sex">{{person.Name}}</p>-->
+            <p>{{person.School}}</p>
+            <p>简历完成度<span>{{person.Complete}}</span></p>
+        </div>
+        <div>
+            <button @click="goVitae">预览简历</button>
+        </div>
+    </header>
+    <div class="test1">
+        <p>
+            职场测试
+        </p>
+        <p>
+            {{person.test1}}
+            <span></span>
+        </p>
+    </div>
+    <div class="test2">
+        <p>
+            第二课堂成绩单
+        </p>
+        <p>
+            <span></span>
+        </p>
+    </div>
+
+    <div class="test3">
+        <p>
+            基本信息
+        </p>
+        <p>
+            {{person.test2}}
+            <span></span>
+        </p>
+    </div>
+    <div class="test4">
+        <p>
+            求职意向
+        </p>
+        <p>
+            {{person.test3}}
+            <span></span>
+        </p>
+    </div>
+
+    <div class="test5">
+        <p>
+            自我评价&emsp13;(选填)
+        </p>
+        <p>
+            {{person.test4}}
+            <span></span>
+        </p>
+    </div>
+    </div>
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script src="common/js/public.js"></script>
+<script src="common/js/vitae.js"></script>
+</html>

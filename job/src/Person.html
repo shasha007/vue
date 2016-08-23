@@ -1,0 +1,75 @@
+<!--
+Created by huqiwen on 16/8/5.创就业
+describe : 
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>我的</title>
+</head>
+
+<body>
+<div id="person">
+        <nav>
+            <div><a :class="{ 'on': tab}" @click="swap">我的投递记录</a></div>
+            <div><a :class="{ 'on': !tab}" @click="swap">我的收藏</a></div>
+        </nav>
+        <!--我的投递记录-->
+        <ul class="H_myRecord" v-if="tab" transition="tablist">
+            <li class="clearfix" v-for="record in record">
+                <div>
+                    <img :src="record.Img">
+                </div>
+                <div>
+                    <p class="jobName">{{record.Name}}</p>
+
+                    <p class="Money">{{record.MoneyBottom}}&emsp13;-&emsp13;{{record.MoneyTop}}</p>
+
+                    <p class="From">{{record.From}}</p>
+
+                    <p class="Require">{{record.Place}}&emsp13;/&emsp13;经验{{record.YearBottom}}到{{record.YearTop}}年&emsp13;/&emsp13;{{record.Academic}}</p>
+                </div>
+                <div>
+                    <p class="Time">{{record.Time}}</p>
+
+                    <p v-if="record.is" class="Match m{{record.Match}}">
+                    </p>
+                    <p v-if="record.is" class="Percent">匹配度<span>{{record.Percent}}</span>%</p>
+                    <p v-else="record.is" class="Go arrow">
+                    </p>
+                </div>
+            </li>
+        </ul>
+    <!--我的收藏-->
+    <ul class="H_myCollect" v-if="!tab" transition="tablist">
+        <li class="clearfix" v-for="collect in collect">
+            <div>
+                <p class="jobName">{{collect.Name}}<span v-if="collect.is">已投递</span></p>
+                <p class="Money">{{collect.MoneyBottom}}&emsp13;-&emsp13;{{collect.MoneyTop}}</p>
+                <p class="From">{{collect.From}}</p>
+                <p class="Require">{{collect.Place}}&emsp13;/&emsp13;经验{{collect.YearBottom}}到{{collect.YearTop}}年&emsp13;/&emsp13;{{collect.Academic}}</p>
+            </div>
+            <div>
+                <button class="deliver">投递</button>
+                <button class="delete">删除</button>
+            </div>
+        </li>
+    </ul>
+
+    </div>
+
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/vue/dist/vue.js"></script>
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="common/js/public.js"></script>
+<script src="common/js/person.js"></script>
+</html>
