@@ -1,0 +1,295 @@
+<!--
+Created by huqiwen on 16/9/5
+describe : 全国高校股票模拟大赛
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>全国高校股票模拟大赛</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="shares">
+    <div class="sharesCon" transition="expand" >
+        <img src="common/images/bg.png">
+
+        <div class="container">
+            <input  @focus="getFocus" class="schoolName" type="text" placeholder="学校">
+            <input type="text" placeholder="姓名">
+            <input type="tel" placeholder="手机号">
+            <button @click="goTo">APP端报名</button>
+            <p>填写以上信息</p>
+
+            <p>下载“涨乐财富通”APP&emsp13;－&emsp13;点击“我的”</p>
+
+            <p>“股票开户”&emsp13;－&emsp13;“立即开户”&emsp13;－&emsp13;填写个人信息</p>
+
+            <p>完成</p>
+        </div>
+        <div class="copy">
+            <header>PC端</header>
+            <div>
+                <!--<p id="copyCon" >https://m.zhangle.com/openAccount/osoa/views/index.html?ly=HTC1-8517143028</p>-->
+                <input id="copyCon" type="text"
+                       value="https://m.zhangle.com/openAccount/osoa/views/index.html?ly=HTC1-8517143028">
+                <span class="copy_btn" @click="copy">复制网址</span>
+            </div>
+            <p>填写以上信息</p>
+
+            <p>粘贴网址&emsp13;－&emsp13;点击 “立即开户”&emsp13;－&emsp13;填写个人信息</p>
+
+            <p>完成</p>
+        </div>
+        <footer>
+            注&emsp13;:&emsp13;该页面填写的手机号必须与开户手机号一致
+        </footer>
+    </div>
+    <div id="h_LogInBg" class="h_SelectSchool" transition="expand">
+        <ul class="schoolName">
+            <p class="h_LogFlag" id="flagA">A</p>
+            <li>aaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaa</li>
+            <li class="h_LogLastFlag">aaaaaaaaaaaaaaaa</li>
+            <p class="h_LogFlag" id="flagB">B</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagC">C</p>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagD">D</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagE">E</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagF">F</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagG">G</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagH">H</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagI">I</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagJ">J</p>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagK">K</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagL">L</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagM">M</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagN">N</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagO">O</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagP">P</p>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagQ">Q</p>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagR">R</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+
+            <p class="h_LogFlag" id="flagS">S</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagT">T</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagU">U</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagV">V</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagW">W</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagX">X</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagY">Y</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+            <p class="h_LogFlag" id="flagZ">Z</p>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li>bbbbbbbbbbbbb</li>
+            <li class="h_LogLastFlag">bbbbbbbbbbbbb</li>
+        </ul>
+        <ul id="h_LogAnchor">
+            <a href="#flagA">a</a>
+            <a href="#flagB">b</a>
+            <a href="#flagC">c</a>
+            <a href="#flagD">d</a>
+            <a href="#flagE">e</a>
+            <a href="#flagF">f</a>
+            <a href="#flagG">g</a>
+            <a href="#flagH">h</a>
+            <a href="#flagI">i</a>
+            <a href="#flagJ">j</a>
+            <a href="#flagK">k</a>
+            <a href="#flagL">l</a>
+            <a href="#flagM">m</a>
+            <a href="#flagN">n</a>
+            <a href="#flagO">o</a>
+            <a href="#flagP">p</a>
+            <a href="#flagQ">q</a>
+            <a href="#flagR">r</a>
+            <a href="#flagS">s</a>
+            <a href="#flagT">t</a>
+            <a href="#flagU">u</a>
+            <a href="#flagV">v</a>
+            <a href="#flagW">w</a>
+            <a href="#flagX">x</a>
+            <a href="#flagY">y</a>
+            <a href="#flagZ">z</a>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="bower_components/requirejs/require.js" data-main="common/js/index"></script>
+</html>

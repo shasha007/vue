@@ -1,0 +1,416 @@
+@base : #ff5400; //默认颜色
+@borderColor1 : #f2f2f2; //浅边框
+@borderColor2 : #dcdcdc; //深边框
+@borderColor3 : #efefef; //深边框
+@base8 : #888;
+@base9 : #999;
+@font3 : #333; //默认字体颜色
+@font6 : #666; //#666字体颜色
+//我的投递记录
+@m1 : #ea5b5b; //最推荐
+@m2 : #4cbda1; //较合适
+@m3 : #f69d08; //有机会
+@m4 : #666; //没缘分
+[v-cloak]{display:none;}
+
+#beautiful{
+  font-size: 1.3rem;
+  color: @font6;
+  >.tit{
+    height: 4rem;
+    padding: 0 15px;
+    font-size: 1.4rem;
+    line-height: 4rem;
+    font-weight: 500;
+    color: #000;
+    border-bottom: 1px solid @borderColor1;
+  }
+  .titC {
+    height: 3.5rem;
+    padding: 0 15px;
+    font-size: 1.4rem;
+    line-height: 3.5rem;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    >img{
+      width: 80%;
+    }
+    //border-bottom: 1px solid @borderColor1;
+  }
+  >nav{
+    display: flex;
+    height: 5rem;
+    border-bottom: 1px solid @borderColor1;
+    align-items: center;
+    justify-content: center;
+    >div{
+      flex: 1;
+      >p{
+        height: 2.5rem;
+        padding: 0 10px;
+        line-height: 2.5rem;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      >p:nth-child(1){
+        color: #9a9a9a;
+      }
+      >p:nth-child(2){
+        color: #ff8c4d;
+      }
+    }
+  }
+  >.time{
+    >.start,>.end{
+      height: 3rem;
+      padding: 0 15px;
+      line-height: 3rem;
+    }
+    >.end{
+      border-bottom: 1px solid @borderColor1;
+    }
+  }
+  >.rule{
+    border-bottom: 1px solid @borderColor1;
+    >ul{
+      padding: 0 15px;
+      >li{
+        margin: .3rem 0;
+        line-height: 150%;
+      }
+      >li:before{
+        content: ".";
+        font-size: 5rem;
+        margin-right: 10px;
+      }
+    }
+    >footer{
+      display: flex;
+      justify-content: space-between;
+      padding:15px 20px;
+      >button{
+        width: 7.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+        background: #323232;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  .inc{
+    >article{
+      padding: 1rem 15px;
+      line-height: 150%;
+      overflow: hidden;
+      //white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    >footer{
+      height: 2.5rem;
+      font-size: 1.2rem;
+      line-height:2.5rem;
+    }
+  }
+  .indexSchool {
+    margin-top: 10px;
+    margin-bottom: 3.2rem;
+    > .indexUl {
+      //display: flex;
+      //width: 100%;
+      padding: 0 15px;
+      > li {
+        width: 46%;
+        float: left;
+        margin-bottom: 15px;
+        >img{
+          padding: 0 5px;
+        }
+        >p{
+          height: 1.7rem;
+          line-height: 1.7rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        >.school{
+          margin-top: 5px;
+          font-size: 1.4rem;
+          color: @font3;
+        }
+        >.point{
+          color: #ff5400;
+        }
+        >button{
+          width: 100%;
+          height: 2rem;
+          margin: 5px 0;
+          background: #ea5504;
+          border: none;
+          border-radius: 5px;
+          color: #fff;
+        }
+      }
+      > li:nth-child(odd){
+        margin-right: 8%;
+      }
+    }
+    .data-loader{
+      background: none!important;
+    }
+  }
+  >.indexFoot{
+    position: fixed;
+    bottom:0;
+    display: flex;
+    width: 100%;
+    max-width: 640px;
+    height: 3.6rem;
+    background: #fff;
+    z-index: 99;
+    color: #333;
+    font-weight: bold;
+    border-top: 1px solid @borderColor3;
+    align-items: center;
+    justify-content: center;
+    >div{
+      flex: 1;
+      text-align: center;
+      >a{
+        color: #333!important;
+      }
+    }
+    >div:nth-child(1), >div:nth-child(2){
+      border-right: 1px solid @borderColor3;
+    }
+  }
+  .modal-content{
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+    /* text-align: center; */
+    margin-top: 40%;
+    padding: 10px 15px;
+  }
+}
+
+#school{
+  font-size: 1.3rem;
+  >.tit{
+    height: 4rem;
+    padding: 0 15px;
+    font-size: 1.4rem;
+    line-height: 4rem;
+    font-weight: 500;
+    color: #000;
+  }
+  >.photo{
+    background: url("../images/more.png") no-repeat 95% 50%;
+    background-size: 5%;
+  }
+  >.con{
+    padding: 0 15px;
+    color:@font6;
+    line-height: 150%;
+  }
+  >.point{
+    margin-top: 10px;
+    padding: 0 15px;
+    color: #ff5400;
+    font-size: 1.8rem;
+  }
+  >.vote{
+    width: 90%;
+    height: 3rem;
+    margin: 15px 5%;
+    background: @base;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .photoUl{
+    >li{
+      padding: 0 15px;
+      margin: 15px 0;
+    }
+  }
+  .modal-content{
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 40%;
+    border: none;
+    .two{
+      display: none;
+      padding:10px 20px;
+      >span{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 10px 0;
+        background: url(../images/close.png) no-repeat 0 0;
+        background-size: 10px 10px;
+        float: right;
+      }
+      >p{
+        font-size: 1.6rem;
+        margin: 10px 0;
+        text-align: center;
+      }
+    }
+    .success{
+      display: none;
+      height: 6rem;
+      color: #fff;
+      text-align: center;
+      background: url(../images/sucess.png) no-repeat 0 0;
+      background-size: 100% 100%;
+      >img{
+        visibility: hidden;
+      }
+      >p{
+        line-height: 6rem;
+        color: #fbe226;
+      }
+    }
+    .error{
+      display: none;
+      height: 5rem;
+      padding: 15px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+  }
+}
+
+#list{
+  height: 100%;
+  font-size: 1.3rem;
+  >.listRank {
+    > header {
+      position: relative;
+      > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -2.5rem;
+        margin-left: -150px;
+        width: 300px;
+        height: 5rem;
+        text-align: center;
+      }
+      > .on {
+        color: #ff8139;
+        > p:nth-child(1) {
+          height: 3rem;
+          line-height: 3rem;
+          font-size: 1.8rem;
+        }
+        > p:nth-child(2) {
+          height: 2rem;
+          line-height: 2rem;
+        }
+      }
+      > .over {
+        //display: none;
+        color: #00b213;
+        > p {
+          height: 5rem;
+          font-size: 1.8rem;
+          line-height: 5rem;
+        }
+
+      }
+    }
+    > .listUl {
+      > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        border-top: 1px solid @borderColor1;
+        > p {
+          margin: 0 15px;
+          height: 3rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 3rem;
+          overflow: hidden;
+        }
+        > p:nth-child(1) {
+          flex: 1;
+          color: #f3b557;
+        }
+        > p:nth-child(2) {
+          flex: 4;
+          color: #3c3c3c;
+        }
+        > p:nth-child(3) {
+          text-align: right;
+          flex: 2;
+          color: #ff5400;
+        }
+      }
+    }
+  }
+  >.unStart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: url("../images/start.png") no-repeat 0 0;
+    background-size: 100% 100%;
+    >div{
+      text-align: center;
+      color: #ff8139;
+      > p:nth-child(1) {
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 1.8rem;
+      }
+      > p:nth-child(2) {
+        height: 2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+
+//关注我
+#follow{
+  font-size: 1.3rem;
+  padding: 0 15px;
+>p{
+  height: 3rem;
+  margin: 1rem 0;
+  line-height: 3rem;
+}
+  >img{
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+//
+/* 动画 */
+//搜索
+/* 必需 */
+.expand-transition {
+  transition: all .8s ease;
+  height: auto;
+  overflow: hidden;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  height: 0;
+  opacity: 0;
+}

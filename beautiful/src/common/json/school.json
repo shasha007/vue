@@ -1,0 +1,70 @@
+{
+  "status": 1,
+  "info": "",
+  "data": {
+    "list": [
+      {
+        "sid": "2",
+        "votes": "3",
+        "title": "苏州科技大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/2/cover.png"
+      },
+      {
+        "sid": "3",
+        "votes": "0",
+        "title": "苏州市职业大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/3/cover.png"
+      },
+      {
+        "sid": "480",
+        "votes": "0",
+        "title": "南京工业大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/480/cover.png"
+      },
+      {
+        "sid": "507",
+        "votes": "0",
+        "title": "苏州经贸职业技术学院",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/507/cover.png"
+      },
+      {
+        "sid": "524",
+        "votes": "0",
+        "title": "河海大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/524/cover.png"
+      },
+      {
+        "sid": "528",
+        "votes": "0",
+        "title": "淮阴师范学院",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/528/cover.png"
+      },
+      {
+        "sid": "531",
+        "votes": "0",
+        "title": "江苏食品药品职业技术学院",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/531/cover.png"
+      },
+      {
+        "sid": "590",
+        "votes": "0",
+        "title": "南京林业大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/590/cover.png"
+      },
+      {
+        "sid": "591",
+        "votes": "0",
+        "title": "南京中医药大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/591/cover.png"
+      },
+      {
+        "sid": "594",
+        "votes": "0",
+        "title": "南京农业大学",
+        "cover": "http://pocketuniv.com:9001/data/sys_pic/s_vote/594/cover.png"
+      }
+    ],
+    "nowPage": 1,
+    "totalPage": 3
+  }
+}

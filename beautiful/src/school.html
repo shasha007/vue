@@ -1,0 +1,56 @@
+<!--
+Created by huqiwen on 16/9/7
+describe : 最美校园
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>大学主页</title>
+</head>
+<body>
+<div id="school">
+    <img :src="school.banner">
+    <p class="tit">参赛宣言</p>
+    <p class="con" v-text="school.desc"></p>
+    <p class="point">已获票数&emsp13;:&emsp13;{{school.votes}}</p>
+    <button class="vote" @click="voteSchool(school.sid)" >投票</button>
+    <p class="tit photo">更多美照</p>
+    <ul class="photoUl">
+        <li v-for="img in school.pics"><img :src="img"></li>
+    </ul>
+    <div class="modal fade" id="tips">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--二维码-->
+                <div class="two">
+                    <span class="sClose">
+                    </span>
+                    <img src="common/images/two.png">
+                    <p>长按扫我关注参与投票</p>
+                </div>
+                <!--成功-->
+                <div class="success">
+                    <p>投票成功</p>
+                </div>
+                <!--false-->
+                <div class="error" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="bower_components/requirejs/require.js" data-main="common/js/school"></script>
+</html>

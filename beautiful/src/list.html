@@ -1,0 +1,56 @@
+<!--
+Created by huqiwen on 16/9/8
+describe : 实时排名
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="common/css/reset.min.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <title>实时排名</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="list" v-cloak>
+    <div class="listRank" v-if="start">
+        <header>
+            <img src="common/images/index_1.png">
+            <div class="on" v-if="on">
+                <p>最美校园实时排名</p>
+
+                <p>更新截止时间2016/09/05&emsp13;15:32</p>
+            </div>
+            <div class="over" v-if="over">
+                <p>活动已结束</p>
+            </div>
+        </header>
+        <ul class="listUl">
+            <li v-for="rank in rank">
+                <p v-text="$index + 1"></p>
+                <p v-text="rank.title"></p>
+                <p v-text="rank.votes">888票</p>
+            </li>
+        </ul>
+        <div class="index_loading_flag"></div>
+    </div>
+    <div class="unStart"  v-if="!start">
+        <div>
+            <p>活动即将开始</p>
+            <p>活动将于2018年12月20日&emsp13;20:00</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="bower_components/requirejs/require.js" data-main="common/js/list"></script>
+</html>

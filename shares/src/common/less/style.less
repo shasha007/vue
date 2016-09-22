@@ -1,0 +1,170 @@
+@base : #ea5504; //默认颜色
+@borderColor1 : #f2f2f2; //浅边框
+@borderColor2 : #dcdcdc; //深边框
+@base8 : #888;
+@base9 : #999;
+@font3 : #333; //默认字体颜色
+@font6 : #666; //#666字体颜色
+//我的投递记录
+@m1 : #ea5b5b; //最推荐
+@m2 : #4cbda1; //较合适
+@m3 : #f69d08; //有机会
+@m4 : #666; //没缘分
+[v-cloak]{display:none;}
+//我的
+#shares {
+  font-size: 1.1rem;
+  > .sharesCon {
+    > .container {
+      position: relative;
+      top: -4rem;
+      z-index: 99;
+      width: 88%;
+      //height: 20rem;
+      margin: 0px auto;
+      padding: 1rem 0;
+      background: #fff;
+      border: 1px solid @borderColor1;
+      box-shadow: 0 0 20px @borderColor1;
+      > input {
+        width: 90%;
+        height: 3.5rem;
+        margin: 0 5%;
+        //padding: 0 15px;
+        border: none;
+        border-bottom: 1px solid @borderColor1;
+        background: #fff;
+        font-size: 1.2rem;
+      }
+      > button {
+        width: 80%;
+        height: 3.2rem;
+        margin: 2rem 10%;
+        text-align: center;
+        background: #5f81f3;
+        font-size: 1.2rem;
+        color: #fff;
+        border-radius: 10px;
+      }
+      > p {
+        height: 1.5rem;
+        line-height: 1.5rem;
+        color: @font6;
+        text-align: center;
+      }
+    }
+    > .copy {
+      width: 100%;
+      margin-top: -2rem;
+      background: @borderColor1;
+      > header {
+        width: 88%;
+        height: 1.2rem;
+        margin: 0 auto;
+        padding: 1rem 0;
+        text-align: center;
+        line-height: 1.2rem;
+        color: @font6;
+      }
+      > div {
+        display: flex;
+        width: 88%;
+        height: 3.5rem;
+        margin: 0 auto;
+        line-height: 3.5rem;
+        background: #fff;
+        border: 1px solid @borderColor2;
+        > input, p {
+          flex: 4;
+          margin: 0 5px;
+          color: #000;
+          border: none;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        > span {
+          flex: 1;
+          margin: 0 5px;
+          color: #5f81f3;
+        }
+      }
+      > p {
+        height: 1.5rem;
+        line-height: 1.5rem;
+        color: @font6;
+        text-align: center;
+      }
+      > p:nth-last-child(3) {
+        margin-top: 10px;
+      }
+      > p:nth-last-child(1) {
+        padding-bottom: 10px;
+      }
+    }
+    > footer {
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin: 1rem auto;
+      color: @font3;
+      text-align: center;
+    }
+  }
+
+  //
+  #h_LogInBg{
+    display: none;
+    a, a:active, a:link, a:visited, a:hover {
+      display: block;
+      text-decoration: none;
+      color: #3e3e3e;
+    }
+    .schoolName {
+        li{
+          width: 90%;
+          margin: 0 15px;
+          height: 40px;
+          color: #888;
+          line-height: 40px;
+          border-bottom: 1px solid #f2f1ee;
+          overflow: hidden;
+        }
+    }
+    .h_LogFlag {
+      margin: 0 15px 0 0 !important;
+      padding-left: 15px;
+      height: 30px !important;
+      line-height: 30px !important;
+      background-color: #f2f1ee;
+      border: none !important;
+    }
+    .h_LogLastFlag {
+      border: none !important;
+    }
+    #h_LogAnchor {
+      position: fixed;
+      z-index: 9999;
+      right: 0;
+      top: 30px;
+      width: 15px;
+      text-align: center;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+/* 动画 */
+//搜索
+/* 必需 */
+.expand-transition {
+  transition: all .8s ease;
+  height: auto;
+  overflow: hidden;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  height: 0;
+  opacity: 0;
+}
